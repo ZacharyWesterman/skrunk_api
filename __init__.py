@@ -1,3 +1,5 @@
+__all__ = ['Session', 'SessionError', 'ServerError', 'ClientError']
+
 import requests, functools, os
 
 @functools.cache
@@ -7,13 +9,15 @@ def get_query_text(name: str) -> str:
 		return fp.read()
 
 class SessionError(Exception):
-	def __init__(self, code: int, message: str|None = None):
-		if message is None:
-			message = f'API request failed with status code {code}'
-		else:
-			message = f'Error in API request: {message}'
+	pass
 
-		super().__init__(message)
+class ServerError(SessionError):
+	def __init__(self, code: int):
+		super().__init__(f'API request failed with status code {code}')
+
+class ClientError(SessionError):
+	def __init__(self, message: str):
+		super().__init__(f'Error in API request: {message}')
 
 class Session:
 	def __init__(self, api_key: str, url: str = 'localhost', *, port: int|None = None):
@@ -37,9 +41,9 @@ class Session:
 		)
 
 		if res.status_code == 500:
-			raise SessionError(res.status_code, res.json().get('errors')[0].get('message'))
+			raise ClientError(res.json().get('errors')[0].get('message'))
 		if res.status_code >= 300 or res.status_code < 200:
-			raise SessionError(res.status_code)
+			raise ServerError(res.status_code)
 
 		data = res.json().get('data')
 		for i in data:
