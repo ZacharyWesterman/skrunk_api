@@ -1,0 +1,23 @@
+query ($filter: BlobSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting!){
+	getBlobs(filter: $filter, start: $start, count: $count, sorting: $sorting) {
+		__typename
+		...on BlobList {
+			blobs {
+				id
+				ext
+				mimetype
+				name
+				size
+				creator
+				created
+				tags
+				preview
+				thumbnail
+				hidden
+			}
+		}
+		...on BadTagQuery {
+			message
+		}
+	}
+}

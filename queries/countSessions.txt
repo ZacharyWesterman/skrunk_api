@@ -1,0 +1,3 @@
+query ($username: String!) {
+	countSessions (username: $username)
+}

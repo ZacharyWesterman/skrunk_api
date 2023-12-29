@@ -1,0 +1,12 @@
+query ($id: String!){
+	getBlob (id: $id) {
+		id
+		ext
+		mimetype
+		name
+		size
+		creator
+		created
+		tags
+	}
+}

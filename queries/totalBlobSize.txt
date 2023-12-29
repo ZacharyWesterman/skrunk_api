@@ -1,0 +1,11 @@
+query ($filter: BlobSearchFilter!){
+	totalBlobSize(filter: $filter) {
+		__typename
+		...on BlobCount {
+			count
+		}
+		...on BadTagQuery {
+			message
+		}
+	}
+}

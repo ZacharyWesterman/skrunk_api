@@ -1,0 +1,7 @@
+{
+	getLastWeatherExec {
+		timestamp
+		users
+		error
+	}
+}

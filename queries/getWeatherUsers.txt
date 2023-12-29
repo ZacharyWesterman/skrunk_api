@@ -1,0 +1,20 @@
+{
+	getWeatherUsers {
+		username
+		lat
+		lon
+		max {
+			disable
+			default
+			value
+		}
+		min {
+			disable
+			default
+			value
+		}
+		phone
+		last_sent
+		exclude
+	}
+}
