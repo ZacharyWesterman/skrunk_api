@@ -1,0 +1,8 @@
+{
+	getAPIKeys {
+		key
+		description
+		created
+		perms
+	}
+}

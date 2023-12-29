@@ -1,0 +1,18 @@
+query ($title: String!, $author: String!) {
+	searchBooks(title: $title, author: $author) {
+		__typename
+		...on BookList {
+			books {
+				id
+				title
+				subtitle
+				authors
+				description
+				thumbnail
+			}
+		}
+		...on ApiFailedError {
+			message
+		}
+	}
+}

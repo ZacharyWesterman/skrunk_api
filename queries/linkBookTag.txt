@@ -1,0 +1,11 @@
+mutation ($rfid: String!, $bookId: String!) {
+	linkBookTag (rfid: $rfid, bookId: $bookId) {
+		__typename
+		...on BookTagExistsError {
+			message
+		}
+		...on ApiFailedError {
+			message
+		}
+	}
+}

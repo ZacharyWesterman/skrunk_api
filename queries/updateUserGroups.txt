@@ -1,0 +1,7 @@
+mutation ($username: String!, $groups: [String!]!) {
+	updateUserGroups (username: $username, groups: $groups) {
+		__typename
+		...on UserDoesNotExistError { message }
+		...on InsufficientPerms { message }
+	}
+}

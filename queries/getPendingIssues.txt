@@ -1,0 +1,11 @@
+{
+	getPendingIssues {
+		title
+		number
+		labels {
+			name
+			color
+			description
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	getSystemInfo {
+		storage {
+			name
+			total
+			free
+			used
+		}
+	}
+}

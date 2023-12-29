@@ -1,0 +1,9 @@
+query ($username: String!, $read: Boolean!, $start: Int!, $count: Int!) {
+	getNotifications (username: $username, read: $read, start: $start, count: $count) {
+		recipient
+		created
+		message
+		category
+		id
+	}
+}

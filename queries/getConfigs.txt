@@ -1,0 +1,6 @@
+{
+	getConfigs {
+		name
+		value
+	}
+}

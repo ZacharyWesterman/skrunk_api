@@ -1,0 +1,3 @@
+mutation ($description: String!, $permissions: [String!]!) {
+	createAPIKey (description: $description, permissions: $permissions)
+}

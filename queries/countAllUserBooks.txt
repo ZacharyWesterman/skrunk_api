@@ -1,0 +1,9 @@
+{
+	countAllUserBooks {
+		owner {
+			username
+			display_name
+		}
+		count
+	}
+}

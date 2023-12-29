@@ -1,0 +1,3 @@
+mutation ($module_id: String!, $enabled: Boolean!) {
+	setModuleEnabled(module_id: $module_id, enabled: $enabled)
+}
