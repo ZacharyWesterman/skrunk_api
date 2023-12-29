@@ -1,0 +1,10 @@
+mutation ($username: String!, $subscription: SubscriptionToken!) {
+	createSubscription(username: $username, subscription: $subscription) {
+		__typename
+		...on MissingConfig { message }
+		...on UserDoesNotExistError { message }
+		...on WebPushException { message }
+		...on InvalidSubscriptionToken { message }
+		...on BadNotification { message }
+	}
+}

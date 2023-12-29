@@ -1,0 +1,6 @@
+query ($id: String!) {
+	getQRFromBlob (id: $id) {
+		data
+		error
+	}
+}

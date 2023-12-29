@@ -1,0 +1,3 @@
+query ($username: String!, $read: Boolean!) {
+	countNotifications (username: $username, read: $read)
+}

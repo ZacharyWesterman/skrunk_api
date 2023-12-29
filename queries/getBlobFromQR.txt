@@ -1,0 +1,7 @@
+mutation ($text: String) {
+	getBlobFromQR (text: $text) {
+		__typename
+		...on Blob { id ext }
+		...on InsufficientPerms { message }
+	}
+}
