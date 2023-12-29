@@ -1,8 +1,9 @@
-import requests, functools
+import requests, functools, os
 
 @functools.cache
 def get_query_text(name: str) -> str:
-	with open(f'queries/{name}.txt') as fp:
+	dir_path = os.path.dirname(os.path.realpath(__file__))
+	with open(f'{dir_path}/queries/{name}.txt') as fp:
 		return fp.read()
 
 class SessionError(Exception):
