@@ -1,0 +1,22 @@
+query ($query: String!, $start: Int!, $count: Int!) {
+	searchSubsonic (query: $query, start: $start, count: $count) {
+		__typename
+		...on SubsonicSearch {
+			album {
+				id
+				title
+				album
+				artist
+				coverArt
+				tracks {
+					id
+					title
+					duration
+				}
+			}
+		}
+		...on SubsonicError {
+			message
+		}
+	}
+}
