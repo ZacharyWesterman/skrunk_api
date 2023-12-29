@@ -1,0 +1,10 @@
+mutation ($username: String!, $title: String!, $body: String!, $category: String) {
+	sendNotification(username: $username, title: $title, body: $body, category: $category) {
+		__typename
+		...on MissingConfig { message }
+		...on UserDoesNotExistError { message }
+		...on WebPushException { message }
+		...on InvalidSubscriptionToken { message }
+		...on BadNotification { message }
+	}
+}
