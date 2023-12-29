@@ -1,0 +1,11 @@
+mutation ($id: String!) {
+	deleteBlob(id: $id) {
+		__typename
+		...on BlobDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

@@ -1,0 +1,11 @@
+mutation ($id: String!, $status: Boolean!) {
+	setBugStatus(id: $id, status: $status) {
+		__typename
+		...on BugReportDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

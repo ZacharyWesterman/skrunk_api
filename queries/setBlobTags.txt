@@ -1,0 +1,11 @@
+mutation ($id: String!, $tags: [String!]!) {
+	setBlobTags (id: $id, tags: $tags) {
+		__typename
+		...on BlobDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

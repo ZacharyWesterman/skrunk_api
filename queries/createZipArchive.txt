@@ -1,0 +1,14 @@
+mutation ($filter: BlobSearchFilter!) {
+	createZipArchive (filter: $filter) {
+		__typename
+		...on Blob {
+			id
+			ext
+			name
+			size
+		}
+		...on BadTagQuery { message }
+		...on UserDoesNotExistError { message }
+		...on InsufficientPerms { message }
+	}
+}

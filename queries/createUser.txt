@@ -1,0 +1,14 @@
+mutation ($username: String!, $password: String!, $groups: [String!]!){
+	createUser(username: $username, password: $password, groups: $groups) {
+		__typename
+		...on BadUserNameError {
+			message
+		}
+		...on UserExistsError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

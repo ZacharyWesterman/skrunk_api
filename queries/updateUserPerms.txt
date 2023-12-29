@@ -1,0 +1,11 @@
+mutation ($username: String!, $perms: [String!]!){
+	updateUserPerms(username: $username, perms: $perms) {
+		__typename
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

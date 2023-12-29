@@ -1,0 +1,8 @@
+mutation ($text: String!, $plaintext: Boolean!) {
+	reportBug (text: $text, plaintext: $plaintext) {
+		__typename
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

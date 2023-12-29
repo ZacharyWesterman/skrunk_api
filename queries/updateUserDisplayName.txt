@@ -1,0 +1,14 @@
+mutation ($username: String!, $display_name: String!) {
+	updateUserDisplayName (username: $username, display_name: $display_name) {
+		__typename
+		...on UserData {
+			display_name
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

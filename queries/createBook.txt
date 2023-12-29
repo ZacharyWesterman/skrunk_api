@@ -1,0 +1,7 @@
+mutation ($data: BookCreateData!) {
+	createBook (data: $data) {
+		__typename
+		...on BookTagExistsError { message }
+		...on InsufficientPerms { message }
+	}
+}

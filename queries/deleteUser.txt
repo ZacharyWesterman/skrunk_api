@@ -1,0 +1,11 @@
+mutation ($username: String!){
+	deleteUser(username: $username) {
+		__typename
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

@@ -1,0 +1,8 @@
+mutation ($id: String!, $name: String!) {
+	shareBookNonUser (id: $id, name: $name) {
+		__typename
+		...on BookTagDoesNotExistError { message }
+		...on BookCannotBeShared { message }
+		...on InsufficientPerms { message }
+	}
+}

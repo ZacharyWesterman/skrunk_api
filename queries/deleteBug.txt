@@ -1,0 +1,11 @@
+mutation ($id: String!) {
+	deleteBug (id: $id) {
+		__typename
+		...on BugReportDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

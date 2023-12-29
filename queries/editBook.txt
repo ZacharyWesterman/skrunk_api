@@ -1,0 +1,8 @@
+mutation ($id: String!, $changes: BookEditData!) {
+	editBook (id: $id, changes: $changes) {
+		__typename
+		...on BookTagDoesNotExistError { message }
+		...on UserDoesNotExistError { message }
+		...on InsufficientPerms { message }
+	}
+}

@@ -1,0 +1,16 @@
+mutation ($id: String!, $text: String!, $plaintext: Boolean!) {
+	commentOnBug (id: $id, text: $text, plaintext: $plaintext) {
+		__typename
+		...on BugReport {
+			convo {
+				created
+				creator
+				body
+				body_html
+			}
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

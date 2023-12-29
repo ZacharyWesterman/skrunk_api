@@ -1,0 +1,14 @@
+mutation ($id: String!, $hidden: Boolean!) {
+	setBlobHidden (id: $id, hidden: $hidden) {
+		__typename
+		...on Blob {
+			hidden
+		}
+		...on BlobDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

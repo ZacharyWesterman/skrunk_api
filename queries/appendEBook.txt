@@ -1,0 +1,8 @@
+mutation ($id: String!, $url: String!) {
+	appendEBook(id: $id, url: $url) {
+		__typename
+		...on BookTagDoesNotExistError { message }
+		...on UserDoesNotExistError { message }
+		...on InsufficientPerms { message }
+	}
+}
