@@ -1,6 +1,7 @@
 {
 	getConfigs {
-		name
-		value
+		__typename
+		...on ConfigList { configs { name value } }
+		...on InsufficientPerms { message }
 	}
 }
