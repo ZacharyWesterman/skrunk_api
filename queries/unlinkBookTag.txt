@@ -1,0 +1,11 @@
+mutation ($rfid: String!) {
+	unlinkBookTag (rfid: $rfid) {
+		__typename
+		...on BookTagDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

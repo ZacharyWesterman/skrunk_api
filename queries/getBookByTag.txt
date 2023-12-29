@@ -1,0 +1,37 @@
+query ($rfid: String!) {
+	getBookByTag (rfid: $rfid) {
+		__typename
+		...on Book {
+			title
+			subtitle
+			authors
+			thumbnail
+			description
+			owner {
+				username
+				display_name
+			}
+			id
+			rfid
+			categories
+			shared
+			shareHistory {
+				user_id
+				name
+				display_name
+			}
+			industryIdentifiers {
+				type
+				identifier
+			}
+			ebooks {
+				url
+				fileType
+			}
+			audiobook
+		}
+		...on BookTagDoesNotExistError {
+			message
+		}
+	}
+}
