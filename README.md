@@ -2,7 +2,7 @@
 
 This Python module allows easy interaction with [data server](https://github.com/ZacharyWesterman/server) instances.
 
-To get started, add this repo as a git submodule under your repo. Then, usage is as easy as importing the `skrunk_api` module:
+To get started, add this repo as a git submodule under your repo. Then, performing queries is extremely easy:
 ```python
 import skrunk_api
 
