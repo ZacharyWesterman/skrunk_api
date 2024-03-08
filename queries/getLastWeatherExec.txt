@@ -1,7 +1,5 @@
-{
-	getLastWeatherExec {
-		timestamp
-		users
-		error
-	}
-}
+query { getLastWeatherExec {
+	timestamp
+	users
+	error
+} }

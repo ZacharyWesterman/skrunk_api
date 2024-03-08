@@ -1,0 +1,16 @@
+query ($id: String!) {
+	getBugReport (id: $id) {
+		id
+		created
+		creator
+		body
+		body_html
+		convo {
+			created
+			creator
+			body
+			body_html
+		}
+		resolved
+	}
+}

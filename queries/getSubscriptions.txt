@@ -1,0 +1,18 @@
+query ($username: String!) {
+	getSubscriptions (username: $username) {
+		__typename
+		...on SubscriptionList {
+			list {
+				endpoint
+				expirationTime
+				keys {
+					p256dh
+					auth
+				}
+			}
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+	}
+}

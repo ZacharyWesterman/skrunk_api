@@ -1,1 +1,1 @@
-{ getEnabledModules }
+query { getEnabledModules }

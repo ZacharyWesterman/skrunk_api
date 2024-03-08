@@ -4,6 +4,8 @@ query ($username: String!, $read: Boolean!, $start: Int!, $count: Int!) {
 		created
 		message
 		category
+		device_count
+		read
 		id
 	}
 }

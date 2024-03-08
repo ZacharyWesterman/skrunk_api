@@ -1,0 +1,10 @@
+query ($auth: String!) {
+	getSubscription (auth: $auth) {
+		endpoint
+		expirationTime
+		keys {
+			p256dh
+			auth
+		}
+	}
+}

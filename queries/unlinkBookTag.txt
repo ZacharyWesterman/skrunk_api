@@ -1,6 +1,11 @@
 mutation ($rfid: String!) {
 	unlinkBookTag (rfid: $rfid) {
 		__typename
+		...on BookTag {
+			rfid
+			bookId
+			creator
+		}
 		...on BookTagDoesNotExistError {
 			message
 		}

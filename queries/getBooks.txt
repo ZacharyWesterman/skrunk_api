@@ -1,26 +1,42 @@
 query ($filter: BookSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting!) {
-	getBooks(filter: $filter, start: $start, count: $count, sorting: $sorting) {
+	getBooks (filter: $filter, start: $start, count: $count, sorting: $sorting) {
+		id
 		title
 		subtitle
 		authors
+		publisher
+		publishedDate
 		description
+		industryIdentifiers {
+			type
+			identifier
+		}
+		pageCount
+		categories
+		maturityRating
+		language
 		thumbnail
+		smallThumbnail
+		creator
 		owner {
 			username
 			display_name
 		}
-		id
-		rfid
-		categories
 		shared
 		shareHistory {
 			user_id
 			name
 			display_name
+			start
+			stop
 		}
-		industryIdentifiers {
-			type
-			identifier
+		rfid
+		ownerHistory {
+			user_id
+			name
+			display_name
+			start
+			stop
 		}
 		ebooks {
 			url

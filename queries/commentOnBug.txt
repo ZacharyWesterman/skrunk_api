@@ -2,12 +2,21 @@ mutation ($id: String!, $text: String!, $plaintext: Boolean!) {
 	commentOnBug (id: $id, text: $text, plaintext: $plaintext) {
 		__typename
 		...on BugReport {
+			id
+			created
+			creator
+			body
+			body_html
 			convo {
 				created
 				creator
 				body
 				body_html
 			}
+			resolved
+		}
+		...on BugReportDoesNotExistError {
+			message
 		}
 		...on InsufficientPerms {
 			message

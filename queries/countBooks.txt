@@ -1,3 +1,3 @@
 query ($filter: BookSearchFilter!) {
-	countBooks(filter: $filter)
+	countBooks (filter: $filter) 
 }

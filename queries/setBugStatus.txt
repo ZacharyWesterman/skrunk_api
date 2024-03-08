@@ -1,6 +1,20 @@
 mutation ($id: String!, $status: Boolean!) {
-	setBugStatus(id: $id, status: $status) {
+	setBugStatus (id: $id, status: $status) {
 		__typename
+		...on BugReport {
+			id
+			created
+			creator
+			body
+			body_html
+			convo {
+				created
+				creator
+				body
+				body_html
+			}
+			resolved
+		}
 		...on BugReportDoesNotExistError {
 			message
 		}

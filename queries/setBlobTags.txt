@@ -1,6 +1,20 @@
 mutation ($id: String!, $tags: [String!]!) {
 	setBlobTags (id: $id, tags: $tags) {
 		__typename
+		...on Blob {
+			id
+			created
+			creator
+			name
+			ext
+			mimetype
+			size
+			tags
+			preview
+			thumbnail
+			hidden
+			ephemeral
+		}
 		...on BlobDoesNotExistError {
 			message
 		}

@@ -1,1 +1,1 @@
-{ getVAPIDPublicKey }
+query { getVAPIDPublicKey }

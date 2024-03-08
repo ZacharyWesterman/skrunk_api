@@ -1,7 +1,12 @@
-{
-	getConfigs {
-		__typename
-		...on ConfigList { configs { name value } }
-		...on InsufficientPerms { message }
+query { getConfigs {
+	__typename
+	...on ConfigList {
+		configs {
+			name
+			value
+		}
 	}
-}
+	...on InsufficientPerms {
+		message
+	}
+}}

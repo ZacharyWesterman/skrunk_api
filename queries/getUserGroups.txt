@@ -1,1 +1,1 @@
-{ getUserGroups }
+query { getUserGroups }

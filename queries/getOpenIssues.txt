@@ -1,11 +1,10 @@
-{
-	getOpenIssues {
-		title
-		number
-		labels {
-			name
-			color
-			description
-		}
+query { getOpenIssues {
+	title
+	state
+	number
+	labels {
+		name
+		color
+		description
 	}
-}
+} }

@@ -1,5 +1,5 @@
-query ($filter: BlobSearchFilter!){
-	countBlobs(filter: $filter) {
+query ($filter: BlobSearchFilter!) {
+	countBlobs (filter: $filter) {
 		__typename
 		...on BlobCount {
 			count

@@ -4,10 +4,16 @@ query ($query: String!, $start: Int!, $count: Int!) {
 		...on SubsonicSearch {
 			album {
 				id
+				parent
+				isDir
 				title
 				album
 				artist
+				year
+				genre
 				coverArt
+				playCount
+				created
 				tracks {
 					id
 					title

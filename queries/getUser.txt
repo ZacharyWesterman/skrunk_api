@@ -1,8 +1,9 @@
-query ($username: String!){
-	getUser(username:$username) {
+query ($username: String!) {
+	getUser (username: $username) {
 		__typename
 		...on UserData {
 			username
+			display_name
 			theme {
 				colors {
 					name
@@ -15,7 +16,6 @@ query ($username: String!){
 			}
 			perms
 			last_login
-			display_name
 			groups
 		}
 		...on UserDoesNotExistError {

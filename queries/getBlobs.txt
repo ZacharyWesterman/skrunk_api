@@ -1,19 +1,20 @@
-query ($filter: BlobSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting!){
-	getBlobs(filter: $filter, start: $start, count: $count, sorting: $sorting) {
+query ($filter: BlobSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting!) {
+	getBlobs (filter: $filter, start: $start, count: $count, sorting: $sorting) {
 		__typename
 		...on BlobList {
 			blobs {
 				id
+				created
+				creator
+				name
 				ext
 				mimetype
-				name
 				size
-				creator
-				created
 				tags
 				preview
 				thumbnail
 				hidden
+				ephemeral
 			}
 		}
 		...on BadTagQuery {

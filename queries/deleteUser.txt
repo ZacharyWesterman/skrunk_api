@@ -1,6 +1,23 @@
-mutation ($username: String!){
-	deleteUser(username: $username) {
+mutation ($username: String!) {
+	deleteUser (username: $username) {
 		__typename
+		...on UserData {
+			username
+			display_name
+			theme {
+				colors {
+					name
+					value
+				}
+				sizes {
+					name
+					value
+				}
+			}
+			perms
+			last_login
+			groups
+		}
 		...on UserDoesNotExistError {
 			message
 		}

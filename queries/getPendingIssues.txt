@@ -1,11 +1,10 @@
-{
-	getPendingIssues {
-		title
-		number
-		labels {
-			name
-			color
-			description
-		}
+query { getPendingIssues {
+	title
+	state
+	number
+	labels {
+		name
+		color
+		description
 	}
-}
+} }

@@ -1,7 +1,28 @@
 mutation ($username: String!, $groups: [String!]!) {
 	updateUserGroups (username: $username, groups: $groups) {
 		__typename
-		...on UserDoesNotExistError { message }
-		...on InsufficientPerms { message }
+		...on UserData {
+			username
+			display_name
+			theme {
+				colors {
+					name
+					value
+				}
+				sizes {
+					name
+					value
+				}
+			}
+			perms
+			last_login
+			groups
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }

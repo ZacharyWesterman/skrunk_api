@@ -1,5 +1,5 @@
 query ($title: String!, $author: String!) {
-	searchBooks(title: $title, author: $author) {
+	searchBooks (title: $title, author: $author) {
 		__typename
 		...on BookList {
 			books {
@@ -7,8 +7,45 @@ query ($title: String!, $author: String!) {
 				title
 				subtitle
 				authors
+				publisher
+				publishedDate
 				description
+				industryIdentifiers {
+					type
+					identifier
+				}
+				pageCount
+				categories
+				maturityRating
+				language
 				thumbnail
+				smallThumbnail
+				creator
+				owner {
+					username
+					display_name
+				}
+				shared
+				shareHistory {
+					user_id
+					name
+					display_name
+					start
+					stop
+				}
+				rfid
+				ownerHistory {
+					user_id
+					name
+					display_name
+					start
+					stop
+				}
+				ebooks {
+					url
+					fileType
+				}
+				audiobook
 			}
 		}
 		...on ApiFailedError {

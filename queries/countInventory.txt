@@ -1,0 +1,3 @@
+query ($filter: InventorySearchFilter!) {
+	countInventory (filter: $filter) 
+}

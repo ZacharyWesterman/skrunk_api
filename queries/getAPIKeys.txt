@@ -1,8 +1,6 @@
-{
-	getAPIKeys {
-		key
-		description
-		created
-		perms
-	}
-}
+query { getAPIKeys {
+	key
+	description
+	created
+	perms
+} }

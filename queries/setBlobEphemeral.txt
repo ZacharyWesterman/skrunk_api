@@ -1,0 +1,25 @@
+mutation ($id: String!, $ephemeral: Boolean!) {
+	setBlobEphemeral (id: $id, ephemeral: $ephemeral) {
+		__typename
+		...on Blob {
+			id
+			created
+			creator
+			name
+			ext
+			mimetype
+			size
+			tags
+			preview
+			thumbnail
+			hidden
+			ephemeral
+		}
+		...on BlobDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

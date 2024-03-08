@@ -2,7 +2,18 @@ mutation ($id: String!, $hidden: Boolean!) {
 	setBlobHidden (id: $id, hidden: $hidden) {
 		__typename
 		...on Blob {
+			id
+			created
+			creator
+			name
+			ext
+			mimetype
+			size
+			tags
+			preview
+			thumbnail
 			hidden
+			ephemeral
 		}
 		...on BlobDoesNotExistError {
 			message

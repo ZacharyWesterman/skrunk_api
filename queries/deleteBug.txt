@@ -1,6 +1,20 @@
 mutation ($id: String!) {
 	deleteBug (id: $id) {
 		__typename
+		...on BugReport {
+			id
+			created
+			creator
+			body
+			body_html
+			convo {
+				created
+				creator
+				body
+				body_html
+			}
+			resolved
+		}
 		...on BugReportDoesNotExistError {
 			message
 		}

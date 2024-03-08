@@ -1,0 +1,3 @@
+query ($username: String, $resolved: Boolean!) {
+	countBugReports (username: $username, resolved: $resolved) 
+}

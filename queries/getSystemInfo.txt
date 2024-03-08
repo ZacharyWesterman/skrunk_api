@@ -1,10 +1,8 @@
-{
-	getSystemInfo {
-		storage {
-			name
-			total
-			free
-			used
-		}
+query { getSystemInfo {
+	storage {
+		name
+		total
+		free
+		used
 	}
-}
+} }

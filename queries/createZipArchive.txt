@@ -3,12 +3,26 @@ mutation ($filter: BlobSearchFilter!) {
 		__typename
 		...on Blob {
 			id
-			ext
+			created
+			creator
 			name
+			ext
+			mimetype
 			size
+			tags
+			preview
+			thumbnail
+			hidden
+			ephemeral
 		}
-		...on BadTagQuery { message }
-		...on UserDoesNotExistError { message }
-		...on InsufficientPerms { message }
+		...on BadTagQuery {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }

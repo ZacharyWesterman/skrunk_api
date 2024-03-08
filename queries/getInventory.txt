@@ -1,0 +1,29 @@
+query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting!) {
+	getInventory (filter: $filter, start: $start, count: $count, sorting: $sorting) {
+		id
+		created
+		creator {
+			username
+			display_name
+		}
+		category
+		type
+		location
+		blob {
+			id
+			created
+			creator
+			name
+			ext
+			mimetype
+			size
+			tags
+			preview
+			thumbnail
+			hidden
+			ephemeral
+		}
+		description
+		description_html
+	}
+}

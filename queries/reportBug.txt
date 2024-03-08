@@ -1,6 +1,23 @@
 mutation ($text: String!, $plaintext: Boolean!) {
 	reportBug (text: $text, plaintext: $plaintext) {
 		__typename
+		...on BugReport {
+			id
+			created
+			creator
+			body
+			body_html
+			convo {
+				created
+				creator
+				body
+				body_html
+			}
+			resolved
+		}
+		...on BugReportCreationFailedError {
+			message
+		}
 		...on InsufficientPerms {
 			message
 		}

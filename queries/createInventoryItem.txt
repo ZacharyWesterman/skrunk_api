@@ -1,0 +1,39 @@
+mutation ($category: String!, $type: String!, $location: String!, $blob_id: String!, $description: String!) {
+	createInventoryItem (category: $category, type: $type, location: $location, blob_id: $blob_id, description: $description) {
+		__typename
+		...on Item {
+			id
+			created
+			creator {
+				username
+				display_name
+			}
+			category
+			type
+			location
+			blob {
+				id
+				created
+				creator
+				name
+				ext
+				mimetype
+				size
+				tags
+				preview
+				thumbnail
+				hidden
+				ephemeral
+			}
+			description
+			description_html
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on InvalidFields {
+			message
+			fields
+		}
+	}
+}

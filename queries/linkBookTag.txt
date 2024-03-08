@@ -1,10 +1,18 @@
 mutation ($rfid: String!, $bookId: String!) {
 	linkBookTag (rfid: $rfid, bookId: $bookId) {
 		__typename
+		...on BookTag {
+			rfid
+			bookId
+			creator
+		}
 		...on BookTagExistsError {
 			message
 		}
 		...on ApiFailedError {
+			message
+		}
+		...on InsufficientPerms {
 			message
 		}
 	}

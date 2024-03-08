@@ -1,0 +1,7 @@
+query ($start: Int!, $count: Int!) {
+	weatherAlertHistory (start: $start, count: $count) {
+		recipient
+		message
+		sent
+	}
+}

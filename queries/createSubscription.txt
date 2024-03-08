@@ -1,10 +1,29 @@
 mutation ($username: String!, $subscription: SubscriptionToken!) {
-	createSubscription(username: $username, subscription: $subscription) {
+	createSubscription (username: $username, subscription: $subscription) {
 		__typename
-		...on MissingConfig { message }
-		...on UserDoesNotExistError { message }
-		...on WebPushException { message }
-		...on InvalidSubscriptionToken { message }
-		...on BadNotification { message }
+		...on Notification {
+			recipient
+			created
+			message
+			category
+			device_count
+			read
+			id
+		}
+		...on MissingConfig {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on WebPushException {
+			message
+		}
+		...on InvalidSubscriptionToken {
+			message
+		}
+		...on BadNotification {
+			message
+		}
 	}
 }

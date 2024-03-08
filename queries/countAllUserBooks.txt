@@ -1,9 +1,7 @@
-{
-	countAllUserBooks {
-		owner {
-			username
-			display_name
-		}
-		count
+query { countAllUserBooks {
+	owner {
+		username
+		display_name
 	}
-}
+	count
+} }

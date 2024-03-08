@@ -1,5 +1,5 @@
-query ($username: String, $start: Int!, $count: Int!, $resolved: Boolean!){
-	getBugReports (username: $username, start: $start, count: $count, resolved: $resolved){
+query ($username: String, $start: Int!, $count: Int!, $resolved: Boolean!) {
+	getBugReports (username: $username, start: $start, count: $count, resolved: $resolved) {
 		id
 		created
 		creator

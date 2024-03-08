@@ -1,6 +1,51 @@
 mutation ($id: String!, $username: String!) {
 	setBookOwner (id: $id, username: $username) {
 		__typename
+		...on Book {
+			id
+			title
+			subtitle
+			authors
+			publisher
+			publishedDate
+			description
+			industryIdentifiers {
+				type
+				identifier
+			}
+			pageCount
+			categories
+			maturityRating
+			language
+			thumbnail
+			smallThumbnail
+			creator
+			owner {
+				username
+				display_name
+			}
+			shared
+			shareHistory {
+				user_id
+				name
+				display_name
+				start
+				stop
+			}
+			rfid
+			ownerHistory {
+				user_id
+				name
+				display_name
+				start
+				stop
+			}
+			ebooks {
+				url
+				fileType
+			}
+			audiobook
+		}
 		...on BookTagDoesNotExistError {
 			message
 		}
