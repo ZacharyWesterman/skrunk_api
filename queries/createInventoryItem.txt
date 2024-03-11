@@ -24,6 +24,7 @@ mutation ($category: String!, $type: String!, $location: String!, $blob_id: Stri
 				thumbnail
 				hidden
 				ephemeral
+				references
 			}
 			description
 			description_html

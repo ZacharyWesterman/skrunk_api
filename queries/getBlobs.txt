@@ -15,6 +15,7 @@ query ($filter: BlobSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting
 				thumbnail
 				hidden
 				ephemeral
+				references
 			}
 		}
 		...on BadTagQuery {
