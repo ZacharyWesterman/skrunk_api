@@ -6,6 +6,10 @@ query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: So
 			username
 			display_name
 		}
+		owner {
+			username
+			display_name
+		}
 		category
 		type
 		location

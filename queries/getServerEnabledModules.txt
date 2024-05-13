@@ -1,0 +1,3 @@
+query ($group: String) {
+	getServerEnabledModules (group: $group) 
+}

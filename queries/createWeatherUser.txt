@@ -17,6 +17,7 @@ mutation ($userdata: WeatherUserInput!) {
 			perms
 			last_login
 			groups
+			disabled_modules
 		}
 		...on BadUserNameError {
 			message

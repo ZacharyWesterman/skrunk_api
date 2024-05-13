@@ -1,10 +1,14 @@
-mutation ($category: String!, $type: String!, $location: String!, $blob_id: String!, $description: String!) {
-	createInventoryItem (category: $category, type: $type, location: $location, blob_id: $blob_id, description: $description) {
+mutation ($owner: String!, $category: String!, $type: String!, $location: String!, $blob_id: String!, $description: String!, $rfid: String!) {
+	createInventoryItem (owner: $owner, category: $category, type: $type, location: $location, blob_id: $blob_id, description: $description, rfid: $rfid) {
 		__typename
 		...on Item {
 			id
 			created
 			creator {
+				username
+				display_name
+			}
+			owner {
 				username
 				display_name
 			}
@@ -35,6 +39,12 @@ mutation ($category: String!, $type: String!, $location: String!, $blob_id: Stri
 		...on InvalidFields {
 			message
 			fields
+		}
+		...on ItemExistsError {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
 		}
 	}
 }

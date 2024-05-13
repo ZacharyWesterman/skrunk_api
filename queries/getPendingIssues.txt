@@ -1,10 +1,18 @@
 query { getPendingIssues {
-	title
-	state
-	number
-	labels {
-		name
-		color
-		description
+	__typename
+	...on IssueList {
+		issues {
+			title
+			state
+			number
+			labels {
+				name
+				color
+				description
+			}
+		}
 	}
-} }
+	...on RepoFetchFailed {
+		message
+	}
+}}

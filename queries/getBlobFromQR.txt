@@ -1,5 +1,5 @@
-mutation ($text: String) {
-	getBlobFromQR (text: $text) {
+mutation ($text: String, $amount: Int!) {
+	getBlobFromQR (text: $text, amount: $amount) {
 		__typename
 		...on Blob {
 			id

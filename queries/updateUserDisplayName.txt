@@ -17,6 +17,7 @@ mutation ($username: String!, $display_name: String!) {
 			perms
 			last_login
 			groups
+			disabled_modules
 		}
 		...on UserDoesNotExistError {
 			message

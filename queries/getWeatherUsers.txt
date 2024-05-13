@@ -12,7 +12,6 @@ query { getWeatherUsers {
 		disable
 		value
 	}
-	phone
 	last_sent
 	exclude
 } }

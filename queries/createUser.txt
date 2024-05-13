@@ -17,6 +17,7 @@ mutation ($username: String!, $password: String!, $groups: [String!]!) {
 			perms
 			last_login
 			groups
+			disabled_modules
 		}
 		...on BadUserNameError {
 			message

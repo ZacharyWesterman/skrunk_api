@@ -1,5 +1,5 @@
-mutation ($userdata: WeatherUserInput!) {
-	updateWeatherUser (userdata: $userdata) {
+mutation ($username: String!, $module: String!, $disabled: Boolean!) {
+	updateUserModule (username: $username, module: $module, disabled: $disabled) {
 		__typename
 		...on UserData {
 			username

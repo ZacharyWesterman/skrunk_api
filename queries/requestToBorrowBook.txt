@@ -1,0 +1,29 @@
+mutation ($id: String!) {
+	requestToBorrowBook (id: $id) {
+		__typename
+		...on Notification {
+			recipient
+			created
+			message
+			category
+			device_count
+			read
+			id
+		}
+		...on MissingConfig {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on WebPushException {
+			message
+		}
+		...on InvalidSubscriptionToken {
+			message
+		}
+		...on BadNotification {
+			message
+		}
+	}
+}
