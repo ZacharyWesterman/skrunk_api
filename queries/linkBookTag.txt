@@ -1,5 +1,5 @@
-mutation ($rfid: String!, $bookId: String!) {
-	linkBookTag (rfid: $rfid, bookId: $bookId) {
+mutation ($owner: String!, $rfid: String!, $bookId: String!) {
+	linkBookTag (owner: $owner, rfid: $rfid, bookId: $bookId) {
 		__typename
 		...on BookTag {
 			rfid
@@ -13,6 +13,9 @@ mutation ($rfid: String!, $bookId: String!) {
 			message
 		}
 		...on InsufficientPerms {
+			message
+		}
+		...on UserDoesNotExistError {
 			message
 		}
 	}

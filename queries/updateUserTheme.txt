@@ -18,6 +18,7 @@ mutation ($username: String!, $theme: UserTheme!) {
 			last_login
 			groups
 			disabled_modules
+			email
 		}
 		...on UserDoesNotExistError {
 			message

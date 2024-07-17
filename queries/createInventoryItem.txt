@@ -1,4 +1,4 @@
-mutation ($owner: String!, $category: String!, $type: String!, $location: String!, $blob_id: String!, $description: String!, $rfid: String!) {
+mutation ($owner: String!, $category: String!, $type: String!, $location: String!, $blob_id: String!, $description: String!, $rfid: String) {
 	createInventoryItem (owner: $owner, category: $category, type: $type, location: $location, blob_id: $blob_id, description: $description, rfid: $rfid) {
 		__typename
 		...on Item {
@@ -7,10 +7,12 @@ mutation ($owner: String!, $category: String!, $type: String!, $location: String
 			creator {
 				username
 				display_name
+				last_login
 			}
 			owner {
 				username
 				display_name
+				last_login
 			}
 			category
 			type
@@ -32,6 +34,7 @@ mutation ($owner: String!, $category: String!, $type: String!, $location: String
 			}
 			description
 			description_html
+			rfid
 		}
 		...on InsufficientPerms {
 			message

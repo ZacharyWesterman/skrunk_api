@@ -1,5 +1,5 @@
-mutation ($userdata: WeatherUserInput!) {
-	updateWeatherUser (userdata: $userdata) {
+mutation ($username: String!, $email: String!) {
+	updateUserEmail (username: $username, email: $email) {
 		__typename
 		...on UserData {
 			username

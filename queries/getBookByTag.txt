@@ -23,6 +23,7 @@ query ($rfid: String!) {
 			owner {
 				username
 				display_name
+				last_login
 			}
 			shared
 			shareHistory {

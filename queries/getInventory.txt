@@ -5,10 +5,12 @@ query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: So
 		creator {
 			username
 			display_name
+			last_login
 		}
 		owner {
 			username
 			display_name
+			last_login
 		}
 		category
 		type
@@ -30,5 +32,6 @@ query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: So
 		}
 		description
 		description_html
+		rfid
 	}
 }

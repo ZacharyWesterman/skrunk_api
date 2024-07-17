@@ -1,5 +1,5 @@
-mutation ($data: BookCreateData!) {
-	createBook (data: $data) {
+mutation ($owner: String!, $data: BookCreateData!) {
+	createBook (owner: $owner, data: $data) {
 		__typename
 		...on BookTag {
 			rfid
@@ -13,6 +13,9 @@ mutation ($data: BookCreateData!) {
 			message
 		}
 		...on InsufficientPerms {
+			message
+		}
+		...on UserDoesNotExistError {
 			message
 		}
 	}

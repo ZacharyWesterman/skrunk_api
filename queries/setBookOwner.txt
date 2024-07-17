@@ -23,6 +23,7 @@ mutation ($id: String!, $username: String!) {
 			owner {
 				username
 				display_name
+				last_login
 			}
 			shared
 			shareHistory {

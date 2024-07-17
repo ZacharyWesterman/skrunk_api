@@ -1,0 +1,18 @@
+mutation ($theme: _Theme!) {
+	createTheme (theme: $theme) {
+		__typename
+		...on Theme {
+			name
+			colors
+			text
+			special
+			border
+		}
+		...on MissingConfig {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

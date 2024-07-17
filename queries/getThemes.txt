@@ -1,0 +1,7 @@
+query { getThemes {
+	name
+	colors
+	text
+	special
+	border
+} }

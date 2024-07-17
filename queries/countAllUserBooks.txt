@@ -2,6 +2,7 @@ query { countAllUserBooks {
 	owner {
 		username
 		display_name
+		last_login
 	}
 	count
 } }

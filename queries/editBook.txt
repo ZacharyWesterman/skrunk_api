@@ -23,6 +23,7 @@ mutation ($id: String!, $changes: BookEditData!) {
 			owner {
 				username
 				display_name
+				last_login
 			}
 			shared
 			shareHistory {

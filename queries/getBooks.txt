@@ -21,6 +21,7 @@ query ($filter: BookSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting
 		owner {
 			username
 			display_name
+			last_login
 		}
 		shared
 		shareHistory {

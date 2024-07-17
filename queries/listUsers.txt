@@ -2,5 +2,6 @@ query ($restrict: Boolean!) {
 	listUsers (restrict: $restrict) {
 		username
 		display_name
+		last_login
 	}
 }

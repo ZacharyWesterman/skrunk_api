@@ -24,6 +24,7 @@ query ($title: String!, $author: String!) {
 				owner {
 					username
 					display_name
+					last_login
 				}
 				shared
 				shareHistory {
