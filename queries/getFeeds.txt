@@ -1,0 +1,11 @@
+query ($start: Int!, $count: Int!) {
+	getFeeds (start: $start, count: $count) {
+		id
+		name
+		creator
+		created
+		kind
+		url
+		notify
+	}
+}
