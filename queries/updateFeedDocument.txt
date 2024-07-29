@@ -5,11 +5,13 @@ mutation ($id: String!, $body: String!) {
 			id
 			feed
 			author
+			title
 			posted
 			body
 			body_html
 			created
 			updated
+			url
 		}
 		...on FeedDocumentDoesNotExistError {
 			message

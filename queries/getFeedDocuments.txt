@@ -3,10 +3,12 @@ query ($feed: String!, $start: Int!, $count: Int!, $sorting: Sorting!) {
 		id
 		feed
 		author
+		title
 		posted
 		body
 		body_html
 		created
 		updated
+		url
 	}
 }

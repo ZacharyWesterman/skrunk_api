@@ -1,15 +1,17 @@
-mutation ($feed: String!, $author: String, $posted: DateTime, $body: String!) {
-	createFeedDocument (feed: $feed, author: $author, posted: $posted, body: $body) {
+mutation ($feed: String!, $author: String, $posted: DateTime, $body: String!, $title: String, $url: String!) {
+	createFeedDocument (feed: $feed, author: $author, posted: $posted, body: $body, title: $title, url: $url) {
 		__typename
 		...on FeedDocument {
 			id
 			feed
 			author
+			title
 			posted
 			body
 			body_html
 			created
 			updated
+			url
 		}
 		...on FeedDoesNotExistError {
 			message
