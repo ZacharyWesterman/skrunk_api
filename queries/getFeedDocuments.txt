@@ -5,7 +5,7 @@ query ($feed: String!, $start: Int!, $count: Int!, $sorting: Sorting!) {
 		posted
 		body
 		body_html
-		fetched
+		created
 		updated
 	}
 }

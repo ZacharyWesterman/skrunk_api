@@ -1,0 +1,20 @@
+mutation ($id: String!, $body: String!) {
+	updateFeedDocument (id: $id, body: $body) {
+		__typename
+		...on FeedDocument {
+			feed
+			author
+			posted
+			body
+			body_html
+			created
+			updated
+		}
+		...on FeedDocumentDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}
