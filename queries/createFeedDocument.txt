@@ -2,6 +2,7 @@ mutation ($feed: String!, $author: String, $posted: DateTime, $body: String!) {
 	createFeedDocument (feed: $feed, author: $author, posted: $posted, body: $body) {
 		__typename
 		...on FeedDocument {
+			id
 			feed
 			author
 			posted
