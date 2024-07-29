@@ -1,0 +1,3 @@
+query ($feed: String!) {
+	countFeedDocuments (feed: $feed) 
+}

@@ -1,0 +1,11 @@
+query ($username: String!) {
+	getUserFeeds (username: $username) {
+		id
+		name
+		creator
+		created
+		kind
+		url
+		notify
+	}
+}

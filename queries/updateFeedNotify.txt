@@ -1,0 +1,26 @@
+mutation ($id: String!, $notify: Boolean!) {
+	updateFeedNotify (id: $id, notify: $notify) {
+		__typename
+		...on Feed {
+			id
+			name
+			creator
+			created
+			kind
+			url
+			notify
+		}
+		...on FeedDoesNotExistError {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on InvalidFeedKindError {
+			message
+		}
+	}
+}

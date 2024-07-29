@@ -1,0 +1,35 @@
+query { getSchema {
+	mutations {
+		name
+		params {
+			name
+			type
+			optional
+		}
+		query
+		returns {
+			type
+			optional
+			array
+		}
+	}
+	queries {
+		name
+		params {
+			name
+			type
+			optional
+		}
+		query
+		returns {
+			type
+			optional
+			array
+		}
+	}
+	types {
+		type
+		union
+		subtypes
+	}
+} }

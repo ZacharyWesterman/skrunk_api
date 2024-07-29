@@ -1,0 +1,20 @@
+query ($id: String!) {
+	getFeed (id: $id) {
+		__typename
+		...on Feed {
+			id
+			name
+			creator
+			created
+			kind
+			url
+			notify
+		}
+		...on FeedDoesNotExistError {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+	}
+}

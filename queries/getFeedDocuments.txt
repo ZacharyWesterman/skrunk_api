@@ -1,0 +1,11 @@
+query ($feed: String!, $start: Int!, $count: Int!, $sorting: Sorting!) {
+	getFeedDocuments (feed: $feed, start: $start, count: $count, sorting: $sorting) {
+		feed
+		author
+		posted
+		body
+		body_html
+		fetched
+		updated
+	}
+}
