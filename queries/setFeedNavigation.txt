@@ -1,5 +1,5 @@
-mutation ($id: String!, $notify: Boolean!) {
-	updateFeedNotify (id: $id, notify: $notify) {
+mutation ($id: String!, $page: Int, $sorting: Sorting) {
+	setFeedNavigation (id: $id, page: $page, sorting: $sorting) {
 		__typename
 		...on Feed {
 			id

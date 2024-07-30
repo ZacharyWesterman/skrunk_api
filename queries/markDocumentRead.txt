@@ -1,5 +1,5 @@
-mutation ($id: String!, $body: String!) {
-	updateFeedDocument (id: $id, body: $body) {
+mutation ($id: String!, $read: Boolean!) {
+	markDocumentRead (id: $id, read: $read) {
 		__typename
 		...on FeedDocument {
 			id

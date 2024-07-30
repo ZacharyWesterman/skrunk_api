@@ -1,5 +1,5 @@
-mutation ($id: String!, $notify: Boolean!) {
-	updateFeedNotify (id: $id, notify: $notify) {
+mutation ($id: String!, $inactive: Boolean!) {
+	setFeedInactive (id: $id, inactive: $inactive) {
 		__typename
 		...on Feed {
 			id

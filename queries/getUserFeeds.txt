@@ -7,5 +7,11 @@ query ($username: String!) {
 		kind
 		url
 		notify
+		inactive
+		currentPage
+		currentSort {
+			fields
+			descending
+		}
 	}
 }

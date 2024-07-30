@@ -12,6 +12,7 @@ mutation ($feed: String!, $author: String, $posted: DateTime, $body: String!, $t
 			created
 			updated
 			url
+			read
 		}
 		...on FeedDoesNotExistError {
 			message

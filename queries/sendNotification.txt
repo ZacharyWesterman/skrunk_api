@@ -25,5 +25,8 @@ mutation ($username: String!, $title: String!, $body: String!, $category: String
 		...on BadNotification {
 			message
 		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }

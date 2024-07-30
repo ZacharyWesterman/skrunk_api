@@ -25,5 +25,8 @@ mutation ($username: String!, $subscription: SubscriptionToken!) {
 		...on BadNotification {
 			message
 		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }

@@ -10,5 +10,6 @@ query ($feed: String!, $start: Int!, $count: Int!, $sorting: Sorting!) {
 		created
 		updated
 		url
+		read
 	}
 }

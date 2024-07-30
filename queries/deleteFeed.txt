@@ -9,6 +9,12 @@ mutation ($id: String!) {
 			kind
 			url
 			notify
+			inactive
+			currentPage
+			currentSort {
+				fields
+				descending
+			}
 		}
 		...on FeedDoesNotExistError {
 			message
