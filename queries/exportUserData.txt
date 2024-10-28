@@ -1,5 +1,5 @@
-mutation ($filter: BlobSearchFilter!, $uid: String!) {
-	createZipArchive (filter: $filter, uid: $uid) {
+mutation ($username: String!) {
+	exportUserData (username: $username) {
 		__typename
 		...on Blob {
 			id

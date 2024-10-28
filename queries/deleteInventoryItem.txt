@@ -1,0 +1,46 @@
+mutation ($id: String!) {
+	deleteInventoryItem (id: $id) {
+		__typename
+		...on Item {
+			id
+			created
+			creator {
+				username
+				display_name
+				last_login
+			}
+			owner {
+				username
+				display_name
+				last_login
+			}
+			category
+			type
+			location
+			blob {
+				id
+				created
+				creator
+				name
+				ext
+				mimetype
+				size
+				tags
+				preview
+				thumbnail
+				hidden
+				ephemeral
+				references
+			}
+			description
+			description_html
+			rfid
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on ItemDoesNotExistError {
+			message
+		}
+	}
+}

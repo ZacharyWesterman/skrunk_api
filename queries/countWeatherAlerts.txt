@@ -1,0 +1,3 @@
+query ($username: String!) {
+	countWeatherAlerts (username: $username) 
+}

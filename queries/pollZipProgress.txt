@@ -1,0 +1,12 @@
+query ($uid: String!) {
+	pollZipProgress (uid: $uid) {
+		__typename
+		...on ZipProgress {
+			progress
+			item
+		}
+		...on BlobDoesNotExistError {
+			message
+		}
+	}
+}

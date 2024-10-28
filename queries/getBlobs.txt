@@ -21,5 +21,8 @@ query ($filter: BlobSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting
 		...on BadTagQuery {
 			message
 		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }

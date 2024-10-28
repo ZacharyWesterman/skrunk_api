@@ -1,0 +1,12 @@
+mutation ($uid: String!) {
+	cancelZipArchive (uid: $uid) {
+		__typename
+		...on ZipProgress {
+			progress
+			item
+		}
+		...on BlobDoesNotExistError {
+			message
+		}
+	}
+}

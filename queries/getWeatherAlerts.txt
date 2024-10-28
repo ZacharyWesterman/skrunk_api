@@ -1,0 +1,7 @@
+query ($username: String!, $start: Int!, $count: Int!) {
+	getWeatherAlerts (username: $username, start: $start, count: $count) {
+		recipient
+		message
+		sent
+	}
+}
