@@ -1,24 +1,22 @@
 mutation ($username: String!) {
 	disableWeatherUser (username: $username) {
 		__typename
-		...on UserData {
+		...on WeatherUser {
 			username
-			display_name
-			theme {
-				colors {
-					name
-					value
-				}
-				sizes {
-					name
-					value
-				}
+			lat
+			lon
+			max {
+				default
+				disable
+				value
 			}
-			perms
-			last_login
-			groups
-			disabled_modules
-			email
+			min {
+				default
+				disable
+				value
+			}
+			last_sent
+			exclude
 		}
 		...on UserDoesNotExistError {
 			message
