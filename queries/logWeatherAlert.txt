@@ -1,0 +1,11 @@
+mutation ($users: [String!]!, $error: String) {
+	logWeatherAlert (users: $users, error: $error) {
+		__typename
+		...on LogResult {
+			result
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}
