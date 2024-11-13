@@ -1,0 +1,26 @@
+query { getWeatherUser {
+	__typename
+	...on WeatherUser {
+		username
+		lat
+		lon
+		max {
+			default
+			disable
+			value
+		}
+		min {
+			default
+			disable
+			value
+		}
+		last_sent
+		exclude
+	}
+	...on UserDoesNotExistError {
+		message
+	}
+	...on InsufficientPerms {
+		message
+	}
+}}
