@@ -9,6 +9,10 @@ import skrunk_api
 api = skrunk_api.Session(your_api_key, 'https://www.example.com')
 
 #Query for a list of users
+user_list = api.list_users(restrict = False)
+print(user_list)
+
+#The above is exactly equivalent to the following:
 user_list = api.call('listUsers', {'restrict': False})
 print(user_list)
 ```
