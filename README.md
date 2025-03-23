@@ -1,6 +1,6 @@
 ## SKRUNK_API
 
-This Python module allows easy interaction with [data server](https://github.com/ZacharyWesterman/server) instances.
+This Python module allows easy interaction with [skrunk server](https://github.com/ZacharyWesterman/skrunk) instances.
 
 To get started, add this repo as a git submodule under your repo. Then, performing queries is extremely easy:
 ```python
