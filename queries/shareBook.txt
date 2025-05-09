@@ -8,7 +8,7 @@ mutation ($id: String!, $username: String!) {
 			authors
 			publisher
 			publishedDate
-			description
+			has_description
 			industryIdentifiers {
 				type
 				identifier

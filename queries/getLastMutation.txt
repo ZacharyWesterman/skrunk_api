@@ -1,0 +1,5 @@
+query { getLastMutation {
+	username
+	request
+	timestamp
+} }

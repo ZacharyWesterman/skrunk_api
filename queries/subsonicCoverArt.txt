@@ -1,0 +1,3 @@
+query ($id: String!) {
+	subsonicCoverArt (id: $id) 
+}

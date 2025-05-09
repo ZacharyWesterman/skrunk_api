@@ -9,7 +9,7 @@ query ($title: String!, $author: String!) {
 				authors
 				publisher
 				publishedDate
-				description
+				has_description
 				industryIdentifiers {
 					type
 					identifier
