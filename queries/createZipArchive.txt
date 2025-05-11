@@ -22,6 +22,9 @@ mutation ($filter: BlobSearchFilter!, $uid: String!) {
 		...on UserDoesNotExistError {
 			message
 		}
+		...on InsufficientDiskSpace {
+			message
+		}
 		...on InsufficientPerms {
 			message
 		}

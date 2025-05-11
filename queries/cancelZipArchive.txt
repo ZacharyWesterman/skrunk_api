@@ -8,5 +8,8 @@ mutation ($uid: String!) {
 		...on BlobDoesNotExistError {
 			message
 		}
+		...on InsufficientPerms {
+			message
+		}
 	}
 }
