@@ -31,5 +31,10 @@ query { getSchema {
 		type
 		union
 		subtypes
+		params {
+			name
+			type
+			optional
+		}
 	}
 } }

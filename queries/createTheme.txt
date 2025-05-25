@@ -1,4 +1,4 @@
-mutation ($theme: _Theme!) {
+mutation ($theme: Theme_!) {
 	createTheme (theme: $theme) {
 		__typename
 		...on Theme {
