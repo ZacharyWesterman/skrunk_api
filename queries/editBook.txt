@@ -9,6 +9,7 @@ mutation ($id: String!, $changes: BookEditData!) {
 			publisher
 			publishedDate
 			has_description
+			description
 			industryIdentifiers {
 				type
 				identifier

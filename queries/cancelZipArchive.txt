@@ -4,6 +4,7 @@ mutation ($uid: String!) {
 		...on ZipProgress {
 			progress
 			item
+			finalizing
 		}
 		...on BlobDoesNotExistError {
 			message

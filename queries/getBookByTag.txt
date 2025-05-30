@@ -9,6 +9,7 @@ query ($rfid: String!) {
 			publisher
 			publishedDate
 			has_description
+			description
 			industryIdentifiers {
 				type
 				identifier

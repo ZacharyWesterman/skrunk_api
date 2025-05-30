@@ -7,6 +7,7 @@ query ($filter: BookSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting
 		publisher
 		publishedDate
 		has_description
+		description
 		industryIdentifiers {
 			type
 			identifier
