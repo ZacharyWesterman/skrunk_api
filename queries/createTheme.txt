@@ -1,7 +1,7 @@
-mutation ($theme: Theme_!) {
+mutation ($theme: Theme!) {
 	createTheme (theme: $theme) {
 		__typename
-		...on Theme {
+		...on ThemeOutput {
 			name
 			colors
 			text

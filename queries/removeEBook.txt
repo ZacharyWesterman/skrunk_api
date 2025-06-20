@@ -1,0 +1,61 @@
+mutation ($id: String!, $index: Int!) {
+	removeEBook (id: $id, index: $index) {
+		__typename
+		...on Book {
+			id
+			title
+			subtitle
+			authors
+			publisher
+			publishedDate
+			has_description
+			description
+			industryIdentifiers {
+				type
+				identifier
+			}
+			pageCount
+			categories
+			maturityRating
+			language
+			thumbnail
+			smallThumbnail
+			creator
+			owner {
+				username
+				display_name
+				last_login
+			}
+			shared
+			shareHistory {
+				user_id
+				name
+				display_name
+				start
+				stop
+			}
+			rfid
+			ownerHistory {
+				user_id
+				name
+				display_name
+				start
+				stop
+			}
+			ebooks {
+				url
+				fileType
+			}
+			audiobook
+		}
+		...on BookTagDoesNotExistError {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

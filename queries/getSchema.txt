@@ -30,6 +30,7 @@ query { getSchema {
 	types {
 		type
 		union
+		input
 		subtypes
 		params {
 			name
