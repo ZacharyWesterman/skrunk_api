@@ -1,11 +1,14 @@
+"""Main module for Skrunk API interactions."""
+
 __all__ = ['Session', 'SessionError', 'ServerError', 'ClientError']
 
 import difflib
 import functools
-import requests
 import os
-from typing import Callable
 from pathlib import Path
+from typing import Callable, Any
+
+import requests
 
 
 @functools.cache
@@ -24,7 +27,7 @@ def get_query_text(name: str) -> str:
         IOError: If there is an error reading the file.
     """
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    with open(f'{dir_path}/queries/{name}.txt') as fp:
+    with open(f'{dir_path}/queries/{name}.txt', encoding='utf-8') as fp:
         return fp.read()
 
 
@@ -65,7 +68,6 @@ class SessionError(Exception):
     """
     Exception raised for errors related to session handling.
     """
-    pass
 
 
 class InvalidQueryError(SessionError):
@@ -136,7 +138,8 @@ class Session:
     Attributes:
         api_key (str): The API key used for authentication.
         url (str): The base URL of the API. Defaults to 'localhost'.
-        port (int | None): The port to use for the connection. Defaults to 5000 for 'localhost' and 443 otherwise.
+        port (int | None): The port to use for the connection.
+            Defaults to 5000 for 'localhost' and 443 otherwise.
 
     Methods:
         __init__(api_key: str, url: str = 'localhost', port: int | None = None):
@@ -146,7 +149,8 @@ class Session:
             Makes a POST request to the API with the given query and variables.
 
         __getattr__(name: str) -> Callable:
-            Dynamically handles attribute access to allow API calls by calling a method on the Session object.
+            Dynamically handles attribute access to allow API calls by
+            calling a method on the Session object.
     """
 
     def __init__(self, api_key: str, url: str = 'localhost', *, port: int | None = None):
@@ -156,7 +160,8 @@ class Session:
         Args:
             api_key (str): The API key for authentication.
             url (str, optional): The base URL of the API. Defaults to 'localhost'.
-            port (int, optional): The port to connect to. Defaults to 5000 if url is 'localhost', otherwise 443.
+            port (int, optional): The port to connect to.
+                Defaults to 5000 if url is 'localhost', otherwise 443.
         """
 
         if port is None:
@@ -165,16 +170,17 @@ class Session:
         self.url = url
         self.api_key = api_key
 
-    def call(self, query_name: str, variables: dict | None = None) -> str:
+    def call(self, query_name: str, variables: dict | None = None) -> Any:
         """
         Executes a GraphQL query by sending a POST request to the API.
 
         Args:
             query_name (str): The name of the query to be executed.
-            variables (dict | None, optional): A dictionary of variables to be passed with the query. Defaults to None.
+            variables (dict | None, optional): A dictionary of variables to be
+                passed with the query. Defaults to None.
 
         Returns:
-            str: The data returned from the API for the given query.
+            Any: The data returned from the API for the given query.
 
         Raises:
             InvalidQueryError: If the query file is not found.
@@ -186,8 +192,8 @@ class Session:
 
         try:
             query_text = get_query_text(query)
-        except FileNotFoundError:
-            raise InvalidQueryError(query_name)
+        except FileNotFoundError as e:
+            raise InvalidQueryError(query_name) from e
 
         res = requests.post(
             f'{self.url}/api',
@@ -199,6 +205,7 @@ class Session:
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {self.api_key}',
             },
+            timeout=10,
         )
 
         if res.status_code == 500:
@@ -212,13 +219,15 @@ class Session:
 
     def __getattr__(self, name) -> Callable:
         """
-        Dynamically handle attribute access to allow API calls by calling a method on the Session object.
+        Dynamically handle attribute access to allow API calls by
+        calling a method on the Session object.
 
         Args:
             name (str): The name of the attribute being accessed.
 
         Returns:
-            Callable: A wrapper function that takes keyword arguments and returns a dictionary response from the API call.
+            Callable: A wrapper function that takes keyword arguments
+                and returns a dictionary response from the API call.
         """
 
         def wrapper(**kwargs) -> dict:
