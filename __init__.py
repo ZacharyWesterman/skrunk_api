@@ -6,7 +6,7 @@ import difflib
 import functools
 import os
 from pathlib import Path
-from typing import Callable, Any
+from typing import Any, Callable
 
 import requests
 
