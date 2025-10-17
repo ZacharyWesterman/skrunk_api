@@ -195,18 +195,21 @@ class Session:
         except FileNotFoundError as e:
             raise InvalidQueryError(query_name) from e
 
-        res = requests.post(
-            f'{self.url}/api',
-            json={
-                'query': query_text,
-                'variables': variables,
-            },
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {self.api_key}',
-            },
-            timeout=10,
-        )
+        try:
+            res = requests.post(
+                f'{self.url}/api',
+                json={
+                    'query': query_text,
+                    'variables': variables,
+                },
+                headers={
+                    'Content-Type': 'application/json',
+                    'Authorization': f'Bearer {self.api_key}',
+                },
+                timeout=10,
+            )
+        except requests.Timeout as e:
+            raise ClientError('Request timed out') from e
 
         if res.status_code == 500:
             raise ClientError(res.json().get('errors')[0].get('message'))
