@@ -19,6 +19,9 @@ mutation ($username: String!, $password: String!, $groups: [String!]!) {
 			groups
 			disabled_modules
 			email
+			failed_logins
+			is_locked
+			disabled
 		}
 		...on BadUserNameError {
 			message

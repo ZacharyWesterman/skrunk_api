@@ -1,5 +1,5 @@
-mutation ($username: String!, $email: String!) {
-	updateUserEmail (username: $username, email: $email) {
+mutation ($username: String!, $disabled: Boolean!) {
+	updateUserDisabled (username: $username, disabled: $disabled) {
 		__typename
 		...on UserData {
 			username

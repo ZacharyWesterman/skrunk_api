@@ -19,6 +19,9 @@ mutation ($username: String!, $display_name: String!) {
 			groups
 			disabled_modules
 			email
+			failed_logins
+			is_locked
+			disabled
 		}
 		...on UserDoesNotExistError {
 			message

@@ -11,5 +11,6 @@ query ($feed: String!, $start: Int!, $count: Int!, $sorting: Sorting!) {
 		updated
 		url
 		read
+		html_len
 	}
 }

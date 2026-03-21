@@ -1,0 +1,24 @@
+query ($id: String!) {
+	getDocument (id: $id) {
+		__typename
+		...on Document {
+			id
+			title
+			body
+			body_html
+			created
+			updated
+			creator {
+				username
+				display_name
+				last_login
+			}
+		}
+		...on DocumentDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

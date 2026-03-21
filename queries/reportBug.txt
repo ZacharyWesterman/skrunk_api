@@ -1,5 +1,5 @@
-mutation ($text: String!, $plaintext: Boolean!) {
-	reportBug (text: $text, plaintext: $plaintext) {
+mutation ($text: String!) {
+	reportBug (text: $text) {
 		__typename
 		...on BugReport {
 			id

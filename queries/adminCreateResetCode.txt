@@ -1,0 +1,14 @@
+mutation ($username: String!) {
+	adminCreateResetCode (username: $username) {
+		__typename
+		...on ResetCode {
+			code
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

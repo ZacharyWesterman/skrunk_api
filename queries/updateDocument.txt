@@ -1,0 +1,24 @@
+mutation ($id: String!, $title: String, $body: String, $parent: String) {
+	updateDocument (id: $id, title: $title, body: $body, parent: $parent) {
+		__typename
+		...on Document {
+			id
+			title
+			body
+			body_html
+			created
+			updated
+			creator {
+				username
+				display_name
+				last_login
+			}
+		}
+		...on DocumentDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

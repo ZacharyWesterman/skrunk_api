@@ -13,6 +13,7 @@ mutation ($id: String!, $read: Boolean!) {
 			updated
 			url
 			read
+			html_len
 		}
 		...on FeedDocumentDoesNotExistError {
 			message

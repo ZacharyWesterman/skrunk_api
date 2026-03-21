@@ -1,0 +1,11 @@
+mutation ($id: String!) {
+	deleteDocument (id: $id) {
+		__typename
+		...on DocumentDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

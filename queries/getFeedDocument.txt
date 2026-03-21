@@ -1,5 +1,5 @@
-mutation ($feed: String!, $author: String, $posted: DateTime, $body: String!, $title: String, $url: String!) {
-	createFeedDocument (feed: $feed, author: $author, posted: $posted, body: $body, title: $title, url: $url) {
+query ($id: String!) {
+	getFeedDocument (id: $id) {
 		__typename
 		...on FeedDocument {
 			id

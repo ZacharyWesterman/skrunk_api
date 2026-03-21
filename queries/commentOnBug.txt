@@ -1,5 +1,5 @@
-mutation ($id: String!, $text: String!, $plaintext: Boolean!) {
-	commentOnBug (id: $id, text: $text, plaintext: $plaintext) {
+mutation ($id: String!, $text: String!) {
+	commentOnBug (id: $id, text: $text) {
 		__typename
 		...on BugReport {
 			id

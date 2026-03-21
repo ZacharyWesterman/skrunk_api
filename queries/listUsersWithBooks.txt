@@ -1,0 +1,5 @@
+query { listUsersWithBooks {
+	username
+	display_name
+	last_login
+} }

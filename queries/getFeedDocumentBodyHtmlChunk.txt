@@ -1,0 +1,3 @@
+query ($id: String!, $start: Int!, $count: Int!) {
+	getFeedDocumentBodyHtmlChunk (id: $id, start: $start, count: $count) 
+}
