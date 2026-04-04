@@ -1,0 +1,3 @@
+query ($since: DateTime!, $start: Int!, $count: Int!) {
+	listBooksNotSynced (since: $since, start: $start, count: $count) 
+}
