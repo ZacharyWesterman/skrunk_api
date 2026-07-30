@@ -8,11 +8,15 @@ mutation ($owner: String!, $category: String!, $type: String!, $location: String
 				username
 				display_name
 				last_login
+				groups
+				disabled
 			}
 			owner {
 				username
 				display_name
 				last_login
+				groups
+				disabled
 			}
 			category
 			type
@@ -31,6 +35,7 @@ mutation ($owner: String!, $category: String!, $type: String!, $location: String
 				hidden
 				ephemeral
 				references
+				complete
 			}
 			description
 			description_html

@@ -25,6 +25,8 @@ mutation ($id: String!) {
 				username
 				display_name
 				last_login
+				groups
+				disabled
 			}
 			shared
 			shareHistory {

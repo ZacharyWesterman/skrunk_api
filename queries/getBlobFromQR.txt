@@ -15,6 +15,7 @@ mutation ($text: String, $amount: Int!) {
 			hidden
 			ephemeral
 			references
+			complete
 		}
 		...on InsufficientPerms {
 			message

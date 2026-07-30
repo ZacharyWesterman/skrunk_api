@@ -15,6 +15,7 @@ mutation ($filter: BlobSearchFilter!, $uid: String!) {
 			hidden
 			ephemeral
 			references
+			complete
 		}
 		...on BadTagQuery {
 			message

@@ -15,6 +15,7 @@ mutation ($id: String!, $hidden: Boolean!) {
 			hidden
 			ephemeral
 			references
+			complete
 		}
 		...on BlobDoesNotExistError {
 			message

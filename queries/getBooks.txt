@@ -23,6 +23,8 @@ query ($filter: BookSearchFilter!, $start: Int!, $count: Int!, $sorting: Sorting
 			username
 			display_name
 			last_login
+			groups
+			disabled
 		}
 		shared
 		shareHistory {

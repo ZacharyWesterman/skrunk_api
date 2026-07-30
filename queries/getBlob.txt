@@ -13,5 +13,6 @@ query ($id: String!) {
 		hidden
 		ephemeral
 		references
+		complete
 	}
 }

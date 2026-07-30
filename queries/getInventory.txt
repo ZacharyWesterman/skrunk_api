@@ -6,11 +6,15 @@ query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: So
 			username
 			display_name
 			last_login
+			groups
+			disabled
 		}
 		owner {
 			username
 			display_name
 			last_login
+			groups
+			disabled
 		}
 		category
 		type
@@ -29,6 +33,7 @@ query ($filter: InventorySearchFilter!, $start: Int!, $count: Int!, $sorting: So
 			hidden
 			ephemeral
 			references
+			complete
 		}
 		description
 		description_html

@@ -3,5 +3,7 @@ query ($restrict: Boolean!) {
 		username
 		display_name
 		last_login
+		groups
+		disabled
 	}
 }

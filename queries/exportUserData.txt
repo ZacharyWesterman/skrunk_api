@@ -15,6 +15,7 @@ mutation ($username: String!) {
 			hidden
 			ephemeral
 			references
+			complete
 		}
 		...on BadTagQuery {
 			message

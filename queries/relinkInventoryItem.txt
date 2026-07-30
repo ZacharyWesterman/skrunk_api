@@ -8,11 +8,15 @@ mutation ($id: String!, $rfid: String) {
 				username
 				display_name
 				last_login
+				groups
+				disabled
 			}
 			owner {
 				username
 				display_name
 				last_login
+				groups
+				disabled
 			}
 			category
 			type
@@ -31,6 +35,7 @@ mutation ($id: String!, $rfid: String) {
 				hidden
 				ephemeral
 				references
+				complete
 			}
 			description
 			description_html
