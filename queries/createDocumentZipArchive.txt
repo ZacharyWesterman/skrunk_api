@@ -1,0 +1,36 @@
+mutation ($filter: DocumentSearchFilter!, $uid: String!) {
+	createDocumentZipArchive (filter: $filter, uid: $uid) {
+		__typename
+		...on Blob {
+			id
+			created
+			creator
+			name
+			ext
+			mimetype
+			size
+			tags
+			preview
+			thumbnail
+			hidden
+			ephemeral
+			references
+			complete
+		}
+		...on BadTagQuery {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientDiskSpace {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on BlobDoesNotExistError {
+			message
+		}
+	}
+}

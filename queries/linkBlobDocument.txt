@@ -1,5 +1,5 @@
-mutation ($id: String!, $title: String, $body: String) {
-	updateDocument (id: $id, title: $title, body: $body) {
+mutation ($title: String!, $blob_id: String!) {
+	linkBlobDocument (title: $title, blob_id: $blob_id) {
 		__typename
 		...on Document {
 			id
@@ -33,10 +33,13 @@ mutation ($id: String!, $title: String, $body: String) {
 			}
 			shared_groups
 		}
-		...on DocumentDoesNotExistError {
+		...on InsufficientPerms {
 			message
 		}
-		...on InsufficientPerms {
+		...on BlobDocumentsNotSupported {
+			message
+		}
+		...on BlobDoesNotExistError {
 			message
 		}
 	}

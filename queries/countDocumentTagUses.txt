@@ -1,0 +1,3 @@
+query ($tag: String!) {
+	countDocumentTagUses (tag: $tag) 
+}

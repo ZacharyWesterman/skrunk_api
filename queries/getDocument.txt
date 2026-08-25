@@ -7,7 +7,6 @@ query ($id: String!) {
 			body
 			body_html
 			created
-			updated
 			creator {
 				username
 				display_name
@@ -15,6 +14,24 @@ query ($id: String!) {
 				groups
 				disabled
 			}
+			updated
+			updater {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			blob_id
+			tags
+			shared_users {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			shared_groups
 		}
 		...on DocumentDoesNotExistError {
 			message

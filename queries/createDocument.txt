@@ -1,5 +1,5 @@
-mutation ($title: String!, $body: String!, $parent: String) {
-	createDocument (title: $title, body: $body, parent: $parent) {
+mutation ($title: String!, $body: String!) {
+	createDocument (title: $title, body: $body) {
 		__typename
 		...on Document {
 			id
@@ -7,7 +7,6 @@ mutation ($title: String!, $body: String!, $parent: String) {
 			body
 			body_html
 			created
-			updated
 			creator {
 				username
 				display_name
@@ -15,6 +14,24 @@ mutation ($title: String!, $body: String!, $parent: String) {
 				groups
 				disabled
 			}
+			updated
+			updater {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			blob_id
+			tags
+			shared_users {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			shared_groups
 		}
 		...on DocumentDoesNotExistError {
 			message

@@ -1,0 +1,14 @@
+query ($filter: DocumentSearchFilter!) {
+	countDocuments (filter: $filter) {
+		__typename
+		...on DocumentCount {
+			count
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on BadTagQuery {
+			message
+		}
+	}
+}

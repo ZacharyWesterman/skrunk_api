@@ -1,5 +1,5 @@
-mutation ($id: String!, $title: String, $body: String) {
-	updateDocument (id: $id, title: $title, body: $body) {
+mutation ($id: String!, $group: Boolean!, $usernames: [String!]!) {
+	setDocumentShare (id: $id, group: $group, usernames: $usernames) {
 		__typename
 		...on Document {
 			id
@@ -37,6 +37,9 @@ mutation ($id: String!, $title: String, $body: String) {
 			message
 		}
 		...on InsufficientPerms {
+			message
+		}
+		...on UserDoesNotExistError {
 			message
 		}
 	}

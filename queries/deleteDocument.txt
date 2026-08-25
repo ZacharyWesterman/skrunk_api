@@ -1,6 +1,38 @@
 mutation ($id: String!) {
 	deleteDocument (id: $id) {
 		__typename
+		...on Document {
+			id
+			title
+			body
+			body_html
+			created
+			creator {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			updated
+			updater {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			blob_id
+			tags
+			shared_users {
+				username
+				display_name
+				last_login
+				groups
+				disabled
+			}
+			shared_groups
+		}
 		...on DocumentDoesNotExistError {
 			message
 		}

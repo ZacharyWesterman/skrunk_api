@@ -1,0 +1,14 @@
+query ($filter: DocumentSearchFilter!) {
+	totalDocumentSize (filter: $filter) {
+		__typename
+		...on BlobCount {
+			count
+		}
+		...on BadTagQuery {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+	}
+}

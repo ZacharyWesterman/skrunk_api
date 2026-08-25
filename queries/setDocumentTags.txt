@@ -1,5 +1,5 @@
-mutation ($id: String!, $title: String, $body: String) {
-	updateDocument (id: $id, title: $title, body: $body) {
+mutation ($id: String!, $tags: [String!]!) {
+	setDocumentTags (id: $id, tags: $tags) {
 		__typename
 		...on Document {
 			id
