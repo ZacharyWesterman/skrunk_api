@@ -30,7 +30,7 @@ mutation ($owner: String!, $category: String!, $type: String!, $location: String
 				mimetype
 				size
 				tags
-				preview
+				previews
 				thumbnail
 				hidden
 				ephemeral

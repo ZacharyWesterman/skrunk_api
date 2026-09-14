@@ -1,0 +1,6 @@
+query ($text: String!) {
+	suggestBlobTags (text: $text) {
+		name
+		count
+	}
+}

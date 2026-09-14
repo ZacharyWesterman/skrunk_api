@@ -1,5 +1,5 @@
-mutation ($id: String!, $tags: [String!]!) {
-	setDocumentTags (id: $id, tags: $tags) {
+mutation ($title: String!) {
+	createRichTextBlobDocument (title: $title) {
 		__typename
 		...on Document {
 			id
@@ -34,10 +34,10 @@ mutation ($id: String!, $tags: [String!]!) {
 			}
 			shared_groups
 		}
-		...on DocumentDoesNotExistError {
+		...on InsufficientPerms {
 			message
 		}
-		...on InsufficientPerms {
+		...on BlobDocumentsNotSupported {
 			message
 		}
 	}

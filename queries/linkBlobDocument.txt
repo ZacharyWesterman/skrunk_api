@@ -23,6 +23,7 @@ mutation ($title: String!, $blob_id: String!) {
 				disabled
 			}
 			blob_id
+			blob_type
 			tags
 			shared_users {
 				username
@@ -37,6 +38,9 @@ mutation ($title: String!, $blob_id: String!) {
 			message
 		}
 		...on BlobDocumentsNotSupported {
+			message
+		}
+		...on InvalidBlobType {
 			message
 		}
 		...on BlobDoesNotExistError {

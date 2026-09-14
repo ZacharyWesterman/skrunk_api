@@ -10,7 +10,7 @@ mutation ($text: String, $amount: Int!) {
 			mimetype
 			size
 			tags
-			preview
+			previews
 			thumbnail
 			hidden
 			ephemeral

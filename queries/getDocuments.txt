@@ -24,6 +24,7 @@ query ($filter: DocumentSearchFilter!, $start: Int!, $count: Int!) {
 					disabled
 				}
 				blob_id
+				blob_type
 				tags
 				shared_users {
 					username

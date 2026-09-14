@@ -23,6 +23,7 @@ mutation ($id: String!, $group: Boolean!, $usernames: [String!]!) {
 				disabled
 			}
 			blob_id
+			blob_type
 			tags
 			shared_users {
 				username

@@ -1,0 +1,32 @@
+mutation ($id: String!, $name: String!) {
+	renameFeed (id: $id, name: $name) {
+		__typename
+		...on Feed {
+			id
+			name
+			creator
+			created
+			kind
+			url
+			notify
+			inactive
+			currentPage
+			currentSort {
+				fields
+				descending
+			}
+		}
+		...on FeedDoesNotExistError {
+			message
+		}
+		...on UserDoesNotExistError {
+			message
+		}
+		...on InsufficientPerms {
+			message
+		}
+		...on InvalidFeedKindError {
+			message
+		}
+	}
+}

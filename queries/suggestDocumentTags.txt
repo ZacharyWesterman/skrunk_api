@@ -1,0 +1,6 @@
+query ($text: String!) {
+	suggestDocumentTags (text: $text) {
+		name
+		count
+	}
+}

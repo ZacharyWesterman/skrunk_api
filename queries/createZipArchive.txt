@@ -10,7 +10,7 @@ mutation ($filter: BlobSearchFilter!, $uid: String!) {
 			mimetype
 			size
 			tags
-			preview
+			previews
 			thumbnail
 			hidden
 			ephemeral

@@ -10,7 +10,7 @@ mutation ($id: String!, $ephemeral: Boolean!) {
 			mimetype
 			size
 			tags
-			preview
+			previews
 			thumbnail
 			hidden
 			ephemeral
